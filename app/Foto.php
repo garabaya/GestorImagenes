@@ -11,32 +11,26 @@ namespace GestorImagenes;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Album extends Model
+class Foto extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'albumes';
+    protected $table = 'fotos';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['id', 'nombre', 'descripcion', 'usuario_id'];
+    protected $fillable = ['id', 'nombre', 'descripcion', 'ruta', 'album_id'];
 
     //Relaciones
 
-    public function fotos()
-    {
-        return $this->hasMany('GestorImagenes\Foto');
-    }
-
-    public function propietario()
-    {
-        return $this->belongsTo('GestorImagenes\Usuario');
+    public function album(){
+        return $this->belongsTo('GestorImagenes\Album');
     }
 
 }
