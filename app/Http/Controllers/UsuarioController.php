@@ -24,4 +24,8 @@ class UsuarioController extends Controller {
     public function postEditarPerfil(){
         return 'editando perfil';
     }
+    public function missingMethod($parameters = array())
+    {
+        abort(404);
+    }
 }

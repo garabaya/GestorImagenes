@@ -1,6 +1,6 @@
 <?php
 
-namespace GestorImagenes\Http\Controllers\Auth;
+namespace GestorImagenes\Http\Controllers\Validacion;
 
 use GestorImagenes\User;
 use Validator;
