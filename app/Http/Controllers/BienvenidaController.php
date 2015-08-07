@@ -9,7 +9,6 @@
 namespace GestorImagenes\Http\Controllers;
 
 
-use Symfony\Component\HttpKernel\Tests\Controller;
 
 class BienvenidaController extends Controller {
     /*

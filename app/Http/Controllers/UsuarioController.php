@@ -9,8 +9,6 @@
 namespace GestorImagenes\Http\Controllers;
 
 
-use Illuminate\Routing\Controller;
-
 class UsuarioController extends Controller {
     public function __construct()
     {

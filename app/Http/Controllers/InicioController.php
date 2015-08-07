@@ -9,7 +9,6 @@
 namespace GestorImagenes\Http\Controllers;
 
 
-use Illuminate\Routing\Controller;
 
 class InicioController extends Controller {
     public function __construct()

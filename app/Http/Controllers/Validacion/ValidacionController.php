@@ -2,10 +2,10 @@
 
 namespace GestorImagenes\Http\Controllers\Validacion;
 
-use GestorImagenes\User;
-use Validator;
 use GestorImagenes\Http\Controllers\Controller;
-
+use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Contracts\Routing\Registrar;
+use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class ValidacionController extends Controller
 {
@@ -91,7 +91,7 @@ class ValidacionController extends Controller
 
     public function loginPath()
     {
-        return property_exists($this, 'loginPath') ? $this->loginPath : '/validacion/iniciar';
+        return property_exists($this, 'loginPath') ? $this->loginPath : '/validacion/inicio';
     }
 
     public function getRecuperar()
