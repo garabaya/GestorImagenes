@@ -23,7 +23,7 @@ class ValidacionController extends Controller
 
     public function getRegistro()
     {
-        return 'formulario creacion cuenta';
+        return view('validacion.registro');
     }
 
     public function postRegistro(Request $request)
@@ -44,7 +44,7 @@ class ValidacionController extends Controller
 
     public function getInicio()
     {
-        return 'mostrando formulario inicio sesion';
+        return view('validacion.inicio');
     }
 
     public function postInicio(Request $request)
@@ -96,7 +96,7 @@ class ValidacionController extends Controller
 
     public function getRecuperar()
     {
-        return 'recuperar contraseña';
+        return view('validacion.recuperar');
     }
 
     public function postRecuperar()

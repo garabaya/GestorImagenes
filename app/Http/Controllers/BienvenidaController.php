@@ -37,7 +37,7 @@ class BienvenidaController extends Controller {
      */
     public function getIndex()
     {
-        return 'bienvenida a la aplicacion';
+        return view('bienvenida');
     }
     public function missingMethod($parameters = array())
     {
