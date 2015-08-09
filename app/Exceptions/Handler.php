@@ -3,6 +3,7 @@
 namespace GestorImagenes\Exceptions;
 
 use Exception;
+use Illuminate\Session\TokenMismatchException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
@@ -39,6 +40,12 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
-        return parent::render($request, $e);
+        if ($e instanceof TokenMismatchException){
+            return redirect($request->url())->with('csrf', 'Al parecer pasó demasiado tiempo. Intenta de nuevo');
+        }
+        if (config('app.debug')){
+            return parent::render($request, $e);
+        }
+        return redirect('/')->with('error','Algo salió mal');
     }
 }
