@@ -3,6 +3,7 @@
 namespace GestorImagenes\Http\Controllers\Validacion;
 
 use GestorImagenes\Http\Controllers\Controller;
+use GestorImagenes\Http\Requests\IniciarSesionRequest;
 use GestorImagenes\Services\Registrar;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -48,11 +49,8 @@ class ValidacionController extends Controller
         return view('validacion.inicio');
     }
 
-    public function postInicio(Request $request)
+    public function postInicio(IniciarSesionRequest $request)
     {
-        $this->validate($request, [
-            'email' => 'required|email', 'password' => 'required',
-        ]);
 
         $credentials = $request->only('email', 'password');
 
