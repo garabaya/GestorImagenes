@@ -3,9 +3,10 @@
 namespace GestorImagenes\Http\Controllers\Validacion;
 
 use GestorImagenes\Http\Controllers\Controller;
+use GestorImagenes\Services\Registrar;
 use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Contracts\Routing\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
 
 class ValidacionController extends Controller
 {
@@ -18,7 +19,7 @@ class ValidacionController extends Controller
         $this->auth = $auth;
         $this->registrar = $registrar;
 
-        $this->middleware('guest', ['except' => 'getLogout']);
+        $this->middleware('guest', ['except' => 'getSalida']);
     }
 
     public function getRegistro()
